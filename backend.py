@@ -1,3 +1,4 @@
+
 import os
 from flask import Flask, flash, request, redirect, send_file, render_template,url_for
 from werkzeug.utils import secure_filename
@@ -10,9 +11,9 @@ app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 config = []
 
-path_contecst = r"C:\Users\pl1ght\PycharmProjects\RZD_hack"
-path_models = r"C:\Users\pl1ght\PycharmProjects\RZD_hack\models\\"
-name_video = r'C:\Users\pl1ght\PycharmProjects\RZD_hack\DATA2\\'
+path_contecst = r"\RZD_hack"
+path_models = "models\\"
+name_video = 'DATA2\\'
 def allowed_file(filename):
     return '.' in filename and \
         filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
