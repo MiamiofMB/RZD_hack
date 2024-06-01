@@ -48,7 +48,12 @@ def upload_file():
 
 @app.route('/return_pb',methods=['get','post'])
 def return_pb():
-    return render_template('result.html',change=config[0])
+    # data = config[0].split(',')
+    # return render_template('result.html',change=config[0])
+     # edit
+    data = config[0].split(',')
+    return render_template('result.html',change=data)
+    # edit
 #короче редирект после получения материала на
 
 
