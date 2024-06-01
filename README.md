@@ -3,7 +3,7 @@ SKIBIDI MISIS code for RZD
 
 
 1. Перенесите репозиторий на локальный сервер
-2. Рзархивируйте в папке models zip файл models_ в папку models
+2. Скачайте файлы по ссылке https://drive.google.com/drive/folders/1kvJseC7281YyLnuIQNPSFZbQbGKK9smb?usp=sharing и разместите их в папке models
 3. Запустите backend.py
 4. Откройте страницу по адресу локального сервера (https:// + {название сервера})
 5. Нажмитре на кнопку "Upload files"
