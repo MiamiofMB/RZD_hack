@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Обработка информации</title>
+    <link rel = "stylesheet" href="{{url_for('static',filename='main_page.css')}}">
+</head>
+<body>
+<header>
+  <div class="header">
+    <h1><font style="color: black">Загрузка Данных</font></h1>
+    <nav>
+      <a href="https://misis.ru">About Us</a>
+    </nav>
+  </div>
+</header>
+
+
+     <!-- Выбор файла -->
+    <div class="content upload">
+        <form method=post enctype=multipart/form-data>
+            <label><font style="color: black">Выберите файлы:</font></label>
+            <input type=file name=file class="btn"  multiple onchange="printFiles(event)">
+            <br><br>
+            <div id="fileInfo"></div> <!-- Место для вывода информации о файлах -->
+            <button class="btn" type="submit">Обработать</button>
+        </form>
+    </div>
+
+
+    <!-- Контактная информация -->
+    <div class="content1 contact">
+        <p>Nust MISIS</p>
+
+    </div>
+<script src="{{url_for('static',filename='script.js')}}"></script>
+</body>
+</html>
+
+

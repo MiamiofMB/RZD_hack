@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>Tables</title>
+	<link rel = "stylesheet" href="{{url_for('static',filename='result__styles.css')}}">
+</head>
+<body>
+	<header>
+		<!-- icon -->
+		<svg class="logo" width="44" height="33" viewBox="0 0 44 33" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+		  <rect width="44" height="33" rx="6" fill="url(#pattern0_2104_565)"/>
+		  <defs>
+		  <pattern id="pattern0_2104_565" patternContentUnits="objectBoundingBox" width="1" height="1">
+		  <use xlink:href="#image0_2104_565" transform="matrix(0.00487013 0 0 0.00649351 -0.108766 0)"/>
+		  </pattern>
+		  <image id="image0_2104_565" width="250" height="154" xlink:href="data:image/png;base64,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"/>
+		  </defs>
+		  </svg>
+		  
+		<!-- icon -->
+		<nav>
+		  <a href="https://misis.ru">О нас</a>
+		</nav>
+	</header>
+
+	<main>
+
+	<div class="container mtb-3">
+		
+		<div class="table-responsive">
+			<table class="table">
+				<thead>
+					<tr>
+						<th>Номер</th>
+						<th>Время</th>
+						<th>Тип анотации</th>
+						<th>Участок видео, где видно нарушение</th>
+						<!-- <th>E-mail</th> -->
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>1</td>
+						<td>11:20</td>
+						<td>Без спецодежды</td>
+						<td><a href="https://ru.wikipedia.org/wiki/Вычислительная_машина">Посмотреть →</a></td>
+						<!-- <td>morton91@hammes.com</td> -->	
+					</tr>
+					<tr>
+						<td>2</td>
+						<td>11:20</td>
+						<td>Без спецодежды</td>
+						<td><a href="https://ru.wikipedia.org/wiki/Вычислительная_машина">Посмотреть →</a></td>
+						<!-- <td>morton91@hammes.com</td> -->	
+					</tr>
+					<tr>
+						<td>3</td>
+						<td>11:20</td>
+						<td>Без спецодежды</td>
+						<td><a href="https://ru.wikipedia.org/wiki/Вычислительная_машина">Посмотреть →</a></td>
+						<!-- <td>morton91@hammes.com</td> -->	
+					</tr>
+					<tr>
+						<td>4</td>
+						<td>11:20</td>
+						<td>Без спецодежды</td>
+						<td><a href="https://ru.wikipedia.org/wiki/Вычислительная_машина">Посмотреть →</a></td>
+						<!-- <td>morton91@hammes.com</td> -->	
+					</tr>
+					<tr>
+						<td>5</td>
+						<td>11:20</td>
+						<td>Без спецодежды</td>
+						<td><a href="https://ru.wikipedia.org/wiki/Вычислительная_машина">Посмотреть →</a></td>
+						<!-- <td>morton91@hammes.com</td> -->	
+					</tr><tr>
+						<td>6</td>
+						<td>11:20</td>
+						<td>Без спецодежды</td>
+						<td><a href="https://ru.wikipedia.org/wiki/Вычислительная_машина">Посмотреть →</a></td>
+						<!-- <td>morton91@hammes.com</td> -->	
+					</tr><tr>
+						<td>7</td>
+						<td>11:20</td>
+						<td>Без спецодежды</td>
+						<td><a href="https://ru.wikipedia.org/wiki/Вычислительная_машина">Посмотреть →</a></td>
+						<!-- <td>morton91@hammes.com</td> -->	
+					</tr><tr>
+						<td>8</td>
+						<td>11:20</td>
+						<td>Без спецодежды</td>
+						<td><a href="https://ru.wikipedia.org/wiki/Вычислительная_машина">Посмотреть →</a></td>
+						<!-- <td>morton91@hammes.com</td> -->	
+					</tr><tr>
+						<td>9</td>
+						<td>11:20</td>
+						<td>Без спецодежды</td>
+						<td><a href="https://ru.wikipedia.org/wiki/Вычислительная_машина">Посмотреть →</a></td>
+						<!-- <td>morton91@hammes.com</td> -->	
+					</tr><tr>
+						<td>10</td>
+						<td>11:20</td>
+						<td>Без спецодежды</td>
+						<td><a href="https://ru.wikipedia.org/wiki/Вычислительная_машина">Посмотреть →</a></td>
+						<!-- <td>morton91@hammes.com</td> -->	
+					</tr><tr>
+						<td>11</td>
+						<td>11:20</td>
+						<td>Без спецодежды</td>
+						<td><a href="https://ru.wikipedia.org/wiki/Вычислительная_машина">Посмотреть →</a></td>
+						<!-- <td>morton91@hammes.com</td> -->	
+					</tr><tr>
+						<td>12</td>
+						<td>11:20</td>
+						<td>Без спецодежды</td>
+						<td><a href="https://ru.wikipedia.org/wiki/Вычислительная_машина">Посмотреть →</a></td>
+						<!-- <td>morton91@hammes.com</td> -->	
+					</tr><tr>
+						<td>13</td>
+						<td>11:20</td>
+						<td>Без спецодежды</td>
+						<td><a href="https://ru.wikipedia.org/wiki/Вычислительная_машина">Посмотреть →</a></td>
+						<!-- <td>morton91@hammes.com</td> -->	
+					</tr><tr>
+						<td>14</td>
+						<td>11:20</td>
+						<td>Без спецодежды</td>
+						<td><a href="https://ru.wikipedia.org/wiki/Вычислительная_машина">Посмотреть →</a></td>
+						<!-- <td>morton91@hammes.com</td> -->	
+					</tr><tr>
+						<td>15</td>
+						<td>11:20</td>
+						<td>Без спецодежды</td>
+						<td><a href="https://ru.wikipedia.org/wiki/Вычислительная_машина">Посмотреть →</a></td>
+						<!-- <td>morton91@hammes.com</td> -->	
+					</tr><tr>
+						<td>16</td>
+						<td>11:20</td>
+						<td>Без спецодежды</td>
+						<td><a href="https://ru.wikipedia.org/wiki/Вычислительная_машина">Посмотреть →</a></td>
+						<!-- <td>morton91@hammes.com</td> -->	
+					</tr><tr>
+						<td>17</td>
+						<td>11:20</td>
+						<td>Без спецодежды</td>
+						<td><a href="https://ru.wikipedia.org/wiki/Вычислительная_машина">Посмотреть →</a></td>
+						<!-- <td>morton91@hammes.com</td> -->	
+					</tr><tr>
+						<td>18</td>
+						<td>11:20</td>
+						<td>Без спецодежды</td>
+						<td><a href="https://ru.wikipedia.org/wiki/Вычислительная_машина">Посмотреть →</a></td>
+						<!-- <td>morton91@hammes.com</td> -->	
+					</tr>
+					<tr>
+						<td>19</td>
+						<td>11:20</td>
+						<td>Без спецодежды</td>
+						<td><a href="https://ru.wikipedia.org/wiki/Вычислительная_машина">Посмотреть →</a></td>
+						<!-- <td>morton91@hammes.com</td> -->	
+					</tr><tr>
+						<td>20</td>
+						<td>11:20</td>
+						<td>Без спецодежды</td>
+						<td><a href="https://ru.wikipedia.org/wiki/Вычислительная_машина">Посмотреть →</a></td>
+						<!-- <td>morton91@hammes.com</td> -->	
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+		<!-- <hr class="mtb-3"> -->
+
+	</div>
+</main>
+	
+</body>
+</html>
