@@ -43,19 +43,18 @@
 				<tbody>
 					<tr>
 						<td>1</td>
-						<td>Тестовое данное в HTML: 11:20</td>
+						<td>Начало данных</td>
 <!-- 						<td>Без спецодежды</td> -->
 <!-- 						<td><a href="https://ru.wikipedia.org/wiki/Вычислительная_машина">Посмотреть →</a></td> -->
-						<!-- <td>morton91@hammes.com</td> -->	
+						<!-- <td>morton91@hammes.com</td> -->
 					</tr>
-					{% for data in config %}
+					{% for data in change %}
 					    <tr>
 					        <td>{{ loop.index+1 }}</td>
-					        <td>{{ item }}</td>
-					        {% endfor %}
+					        <td>{{ data }}</td>
 					    </tr>
 					    {% endfor %}
-					
+
 				</tbody>
 			</table>
 		</div>
