@@ -39,7 +39,7 @@ def upload_file():
 
             # Получение директории, в которой находится файл скрипта
             res = main_danila(path_contecst , path_models,name_video+filename)
-            config.append(res)
+            config.append(res['value'][0])
             print(res['value'][0]) # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
             return redirect(url_for("return_pb"))
     return render_template('main_page.html')
@@ -48,12 +48,8 @@ def upload_file():
 
 @app.route('/return_pb',methods=['get','post'])
 def return_pb():
-    # data = config[0].split(',')
-    # return render_template('result.html',change=config[0])
-     # edit
     data = config[0].split(',')
     return render_template('result.html',change=data)
-    # edit
 #короче редирект после получения материала на
 
 
